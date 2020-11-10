@@ -28,9 +28,9 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+      -specific variable (count=0) is placed in a different area with each code. 
   2. Which of the two uses a closure? How can you tell?
-  
+  counter1 code, because according to defination, code1 has the info inside their scope versus code2 is reaching out.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
 */
@@ -61,11 +61,10 @@ Use the inning function below to do the following:
   For example: invoking inning() should return a numerical score value of 0, 1, or 2
 */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(){
+  return Math.floor(Math.random(2));
 }
+console.log(inning());
 
 /* Task 3: finalScore()
 Use the finalScore function below to do the following:
@@ -80,19 +79,22 @@ For example: invoking finalScore(inning, 9) might return this object:
 }
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(finalInning, num){
 
-  /*Code Here*/
+  let score = {home:finalInning, away:finalInning};
+  score ++;
+  return `"Home": ${score.home * num}, "Away": ${score.away * num}`;
 
 }
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 // create a function called getInningScore 
 // the function should take the inning function as an argument 
 // it should return an object with with a score for home and a score for away that that populates from invoking the inning callback. */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(inning) {
+  return []
 }
 /* Task 5: scoreboard()
 Use the scoreboard function below to do the following:
